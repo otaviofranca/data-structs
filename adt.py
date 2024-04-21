@@ -32,7 +32,6 @@ class FilaPrioridades:
             self.inicio = novo_no
             self.fim = novo_no
         elif pessoa.grupo_prioritario:
-            # Enfileirar pessoas prioritárias de acordo com a ordem de prioridade
             atual = self.inicio
             anterior = None
             while atual and atual.pessoa.grupo_prioritario and atual.pessoa.idade >= pessoa.idade:
@@ -47,7 +46,6 @@ class FilaPrioridades:
                 if not atual:
                     self.fim = novo_no
         else:
-            # Enfileirar pessoas não prioritárias no final da fila
             self.fim.proximo = novo_no
             self.fim = novo_no
 
